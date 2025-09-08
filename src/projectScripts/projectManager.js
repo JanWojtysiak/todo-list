@@ -26,4 +26,12 @@ export default class ProjectManager {
       delete this.projects[name]; // Remove old entry
     }
   }
+  viewTodos(name) {
+    if (!this.projects[name]) {
+      throw new Error(`Project ${name} not found`);
+    }
+    const array = this.projects[name].todos;
+    const titles = array.map((todo) => todo.title);
+    return titles;
+  }
 }
