@@ -1,4 +1,4 @@
-import { isDate, format } from "date-fns";
+import { isDate } from "date-fns";
 export default class TodoValidator {
   constructor(todo) {
     this.todo = todo;
