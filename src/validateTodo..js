@@ -23,14 +23,13 @@ export default class TodoValidator {
 
   isValidDate() {
     if (isDate(this.todo.date)) {
-      format(this.todo.date, "yyyy/MM/dd");
       return { valid: true };
     }
     return { valid: false, error: "Incorrect date" };
   }
 
   isValidPriority() {
-    if (!this.todo.priority || this.todo.priority === 0) {
+    if (!this.todo.priority || this.todo.priority.length === 0) {
       return { valid: false, error: "Priority is required" };
     }
     return { valid: true };
