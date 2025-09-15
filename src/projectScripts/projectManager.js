@@ -10,21 +10,27 @@ export default class ProjectManager {
   }
   addProject(name) {
     if (this.projects[name]) {
-      throw new Error("Project with that name exists");
+      throw new Error(`Project '${name}' already exists`);
     }
     this.projects[name] = this.projectFactory(name);
   }
+
   removeProject(name) {
     if (!this.projects[name]) {
-      throw new Error("There is no project with that name");
+      throw new Error(`Project '${name}' not found`);
     }
     delete this.projects[name];
   }
+
   renameProject(name, wantedName) {
-    if (this.projects[name]) {
-      this.projects[wantedName] = this.projects[name]; // Copy to new name
-      delete this.projects[name]; // Remove old entry
+    if (!this.projects[name]) {
+      throw new Error(`Project '${name}' not found`);
     }
+    if (this.projects[wantedName]) {
+      throw new Error(`Project '${wantedName}' already exists`);
+    }
+    this.projects[wantedName] = this.projects[name];
+    delete this.projects[name];
   }
   viewTodos(name) {
     if (!this.projects[name]) {
