@@ -7,4 +7,6 @@ export default class TodoManager {
   rename(name) {
     todo[this.#title] = name;
   }
+
+  changePriority() {}
 }
