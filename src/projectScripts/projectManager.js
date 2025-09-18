@@ -1,6 +1,6 @@
 import { createProject } from "./projectCreator";
 
-export default class ProjectManager {
+export class ProjectManager {
   constructor(projectFactory = createProject) {
     if (typeof projectFactory !== "function") {
       throw new Error("Argument must be a function");

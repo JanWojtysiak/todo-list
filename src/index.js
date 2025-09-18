@@ -1,3 +1,3 @@
 import "./templateStyles.css";
-import { DomController } from "./DomController.js";
+import { DomController } from "./domFiles/DomController.js";
 new DomController();
