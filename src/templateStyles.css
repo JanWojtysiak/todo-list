@@ -126,3 +126,11 @@ main > button:hover {
   background: linear-gradient(135deg, #5a6fd8, #6a4190);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
+.viewer {
+  position: absolute;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+  height: 800px;
+  width: 1300px;
+}
