@@ -134,3 +134,20 @@ main > button:hover {
   height: 800px;
   width: 1300px;
 }
+.closeBtn {
+  position: absolute;
+  bottom: clamp(10px, 2vw, 20px); 
+  left: 50%;
+  transform: translateX(-50%); 
+  padding: clamp(10px, 2vw, 16px) clamp(16px, 3vw, 24px);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #f87171, #dc2626); /* Czerwony gradient */
+  border: none;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  color: white; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

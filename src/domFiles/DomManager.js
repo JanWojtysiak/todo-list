@@ -10,8 +10,5 @@ export class DomManager {
         }
     }
     // A method to get a value from an input
-  getElementValue(selector) {
-    const element = document.querySelector(selector);
-    return element ? element.value : null;
-  }
+
 }

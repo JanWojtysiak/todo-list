@@ -52,17 +52,24 @@ export class ProjectUIBuilder {
       "submit"
     );
   }
+  createCloseButton() {
+    return this.factory.createButton(
+      "Close project",
+      "closeBtn",
+      "",
+      "",
+    );
+  }
 
   createProjectButton(title) {
     return this.factory.createButton(title, "button-style project", title);
   }
 
-  createProjectViewer() {
-    return this.factory.createDiv("viewer");
-  }
-
-  createProjectCreationForm() {
-    // This method assembles a more complex component from simpler ones.
+createProjectViewer() {
+    const viewer = this.factory.createDiv("viewer");
+    return viewer;
+}
+createProjectCreationForm() {
     const wrapper = this.factory.createDiv("form-container");
     const form = this.factory.createForm("styled-form");
 
