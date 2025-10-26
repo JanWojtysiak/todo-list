@@ -2,8 +2,7 @@ export default function createTodo(
   title,
   description = "No description",
   date,
-  priority,
-  id = crypto.randomUUID()
+  priority
 ) {
-  return { title, description, date, priority, id };
+  return { title, description, date, priority };
 }

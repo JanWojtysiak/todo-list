@@ -1,5 +1,4 @@
 export class ElementFactory {
-
   createInput(type = "text", className = "", name = "") {
     const input = document.createElement("input");
     input.type = type;
@@ -17,14 +16,12 @@ export class ElementFactory {
     return button;
   }
 
-
   createForm(className = "", id = "") {
     const form = document.createElement("form");
     if (className) form.className = className;
     if (id) form.id = id;
     return form;
   }
-
 
   createDiv(className = "", id = "") {
     const div = document.createElement("div");
@@ -40,45 +37,15 @@ export class ProjectUIBuilder {
     this.factory = factory;
   }
 
-  createProjectNameInput() {
-    return this.factory.createInput("text", "styled-input", "projectName");
-  }
-
-  createSubmitButton() {
-    return this.factory.createButton(
-      "Create Project",
-      "submit-btn",
-      "",
-      "submit"
-    );
-  }
   createCloseButton() {
-    return this.factory.createButton(
-      "Close project",
-      "closeBtn",
-      "",
-      "",
-    );
+    return this.factory.createButton("X", "closeBtn", "", "");
   }
 
   createProjectButton(title) {
     return this.factory.createButton(title, "button-style project", title);
   }
 
-createProjectViewer() {
-    const viewer = this.factory.createDiv("viewer");
-    return viewer;
-}
-createProjectCreationForm() {
-    const wrapper = this.factory.createDiv("form-container");
-    const form = this.factory.createForm("styled-form");
-
-    const input = this.createProjectNameInput();
-    const submitBtn = this.createSubmitButton();
-
-    form.append(input, submitBtn);
-    wrapper.appendChild(form);
-
-    return wrapper;
+  createTodoList() {
+    const form = this.factory.createForm("todo-form");
   }
 }

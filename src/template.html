@@ -6,12 +6,136 @@
     <title>Tuduu</title>
   </head>
   <body>
-    <div id="container">
+    <nav>
       <div id="top">
         <h1>Tuduu</h1>
         <span>Stay on track.</span>
       </div>
-      <main><button class="button-style" id="create-project">+</button></main>
+
+      <div class="form-container">
+        <form class="styled-form" id="create-project-form">
+          <input
+            type="text"
+            class="styled-input"
+            id="project-name-input"
+            name="projectName"
+            placeholder="Name"
+            aria-label="Name"
+            required
+          />
+          <button type="submit" class="submit-btn">+</button>
+        </form>
+      </div>
+    </nav>
+    <div id="container">
+      <div id="projects-tab"></div>
+      <div id="manage-tab">
+        <h2
+          style="
+            font-family: Arial, sans-serif;
+            color: #2c3e50;
+            font-weight: 300;
+          "
+        >
+          Add New Task
+        </h2>
+
+        <form id="add-todo-form">
+          <!-- Title -->
+          <label
+            for="todo-title"
+            style="
+              display: block;
+              margin-bottom: 0.5rem;
+              font-family: Arial, sans-serif;
+              color: #555;
+            "
+          >
+            Task Title
+          </label>
+          <input
+            type="text"
+            id="todo-title"
+            name="todoTitle"
+            class="styled-input"
+            placeholder="What needs to be done?"
+            style="width: 100%; max-width: 400px; margin-bottom: 1rem"
+            required
+          />
+
+          <!-- Description -->
+          <label
+            for="todo-description"
+            style="
+              display: block;
+              margin-bottom: 0.5rem;
+              font-family: Arial, sans-serif;
+              color: #555;
+            "
+          >
+            Description
+          </label>
+          <textarea
+            id="todo-description"
+            name="todoDescription"
+            class="styled-input"
+            placeholder="e.g., 'Remember to buy milk...'"
+            style="
+              width: 100%;
+              max-width: 400px;
+              min-height: 80px;
+              margin-bottom: 1rem;
+            "
+          ></textarea>
+
+          <!-- Date -->
+          <label
+            for="todo-date"
+            style="
+              display: block;
+              margin-bottom: 0.5rem;
+              font-family: Arial, sans-serif;
+              color: #555;
+            "
+          >
+            Due Date
+          </label>
+          <input
+            type="date"
+            id="todo-date"
+            name="todoDate"
+            class="styled-input"
+            style="width: 100%; max-width: 400px; margin-bottom: 1rem"
+            required
+          />
+
+          <!-- Priority -->
+          <label
+            for="todo-priority"
+            style="
+              display: block;
+              margin-bottom: 0.5rem;
+              font-family: Arial, sans-serif;
+              color: #555;
+            "
+          >
+            Priority
+          </label>
+          <select
+            id="todo-priority"
+            name="todoPriority"
+            class="styled-input"
+            style="width: 100%; max-width: 400px; margin-bottom: 1.5rem"
+            required
+          >
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Add Task</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

@@ -1,8 +1,11 @@
 body {
   background-color: #f8fafc;
   box-sizing: border-box;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
 }
 
 h1 {
@@ -18,12 +21,16 @@ h1 {
 
 #container {
   gap: 20px;
-
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 90%;
+}
+
+#projects-tab {
+  width: 70%;
+}
+#manage-tab {
+  width: 30%;
+  height: 100%;
 }
 
 span {
@@ -31,41 +38,32 @@ span {
   font-weight: lighter;
 }
 
-main {
+nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
   align-items: center;
-  border: 2px solid #e2e8f0;
-  width: 80vw;
-  height: 20vh;
+  top: 0;
+  left: 0;
+  width: 200px;
+  max-height: 100%;
+  border-right: 2px solid #e2e8f0;
   padding: 20px;
   background: white;
-  border-radius: clamp(0.5rem, 2vw, 2rem);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-main > div {
-  width: 8%;
-  height: 90%;
-  border-radius: clamp(8px, 2vw, 20px);
-  border: clamp(1px, 0.3vw, 3px) solid #cbd5e1;
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .button-style {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: bold;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border: none;
-  height: 70%;
-  width: 15%;
+  width: 90%;
+  padding: clamp(10px, 2vw, 16px) clamp(16px, 3vw, 24px);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   border-radius: 20px;
 }
 
@@ -83,14 +81,8 @@ main > button:hover {
   gap: 0.5rem;
 }
 
-.form-container {
-  width: 100%;
-  max-width: 800px;
-  box-sizing: border-box;
-}
-
 .styled-form {
-  gap: 40px;
+  gap: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,33 +113,9 @@ main > button:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
+  width: 6rem;
 }
 .submit-btn:hover {
   background: linear-gradient(135deg, #5a6fd8, #6a4190);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-}
-.viewer {
-  position: absolute;
-  background-color: white;
-  border: 4px solid black;
-  border-radius: 10px;
-  height: 800px;
-  width: 1300px;
-}
-.closeBtn {
-  position: absolute;
-  bottom: clamp(10px, 2vw, 20px); 
-  left: 50%;
-  transform: translateX(-50%); 
-  padding: clamp(10px, 2vw, 16px) clamp(16px, 3vw, 24px);
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  font-family: "Arial", sans-serif;
-    background: linear-gradient(135deg, #f87171, #dc2626); /* Czerwony gradient */
-  border: none;
-  border-radius: clamp(8px, 1.5vw, 12px);
-  color: white; 
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
