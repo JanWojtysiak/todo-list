@@ -40,7 +40,11 @@ export class ProjectUIBuilder {
   createCloseButton() {
     return this.factory.createButton("X", "closeBtn", "", "");
   }
-
+  createProjectDiv(name) {
+    const projectDiv = this.factory.createDiv("projectDiv");
+    projectDiv.textContent = name;
+    return projectDiv;
+  }
   createProjectButton(title) {
     return this.factory.createButton(title, "button-style project", title);
   }

@@ -7,10 +7,11 @@ export class AppController {
   }
 
   init() {
-    const projectForm = document.getElementById("create-project-form");
+    const createProjectForm = document.getElementById("create-project-form");
     const todoForm = document.getElementById("create-todo-form");
-    if (projectForm) {
-      projectForm.addEventListener("submit", (e) => {
+    const navWrapper = document.querySelector("nav");
+    if (createProjectForm) {
+      createProjectForm.addEventListener("submit", (e) => {
         this._handleProjectSubmit(e);
       });
     }
@@ -18,6 +19,13 @@ export class AppController {
     if (todoForm) {
       todoForm.addEventListener("submit", (e) => {
         this._handleTodoSubmit(e);
+      });
+    }
+    if (navWrapper) {
+      navWrapper.addEventListener("click", (e) => {
+        if (e.target && e.target.classList.contains("project")) {
+          this._handleProjectOpen(e);
+        }
       });
     }
   }
@@ -48,5 +56,12 @@ export class AppController {
     const priority = document.getElementById("todo-priority").value;
     this.todoCreator(title, description, date, priority);
     event.target.reset();
+  }
+  _handleProjectOpen(event) {
+    event.preventDefault();
+    const projectReference = event.target;
+    const projectId = projectReference.id;
+    const projectDiv = this.uiBuilder.createProjectDiv(projectId);
+    this.domManager.render("#projects-tab", projectDiv);
   }
 }
